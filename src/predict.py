@@ -55,7 +55,7 @@ def load_model_using_config(config:dict):
         # ========================= Inference ==================================
 
         use_gpu                        = True if torch.cuda.is_available()and config['Inference']['use_gpu'] else False,
-        gpu_ids                       = config['Inference']['gpu_ids'],
+        #gpu_ids                       = config['Inference']['gpu_ids'],
         use_amp                        = config['Inference']['use_amp'])
 
     #Load weights for last model from checkpoints_dir
