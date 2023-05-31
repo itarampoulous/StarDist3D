@@ -1,10 +1,10 @@
-# PyTorch StarDist
-This repository contains PyTorch implementations for StarDist 3D as described in:
+# StarDist3D
+This repository contains a user-friendly PyTorch implementation for StarDist 3D for nuclei segmentation based on:
 
 - Martin Weigert, Uwe Schmidt, Robert Haase, Ko Sugawara, and Gene Myers.  
 [*Star-convex Polyhedra for 3D Object Detection and Segmentation in Microscopy*](http://openaccess.thecvf.com/content_WACV_2020/papers/Weigert_Star-convex_Polyhedra_for_3D_Object_Detection_and_Segmentation_in_Microscopy_WACV_2020_paper.pdf). The IEEE Winter Conference on Applications of Computer Vision (WACV), Snowmass Village, Colorado, March 2020
 
-- and based on the PyTorch implementation by [*hthierno*] https://github.com/hthierno/pytorch-stardist
+- and Stardist PyTorch implementation by [*hthierno*] https://github.com/hthierno/pytorch-stardist
 
 ## Examples
 
