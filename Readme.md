@@ -6,12 +6,12 @@ This repository contains a user-friendly PyTorch implementation for StarDist 3D 
 
 - and Stardist PyTorch implementation by [*hthierno*] https://github.com/hthierno/pytorch-stardist
 
-## Examples
+## Examples (from <em> C. elegans </em> embryos)
 
 | Input images | StarDist3D predictions |
 | ------- | ------- |
-| ![C. elegans </em> early embryo](./example_images/Input_image_t22.png) | ![C. elegans early embryo with overlayed predictions](./example_images/Prediction_t22.png) |
-| ![C. elegans early embryo](./example_images/Input_image_t168.png) | ![C. elegans early embryo with overlayed predictions](./example_images/Prediction_t168.png) |
+| ![Input image 1](./example_images/Input_image_t22.png) | ![Prediction 1](./example_images/Prediction_t22.png) |
+| ![Input image 2](./example_images/Input_image_t168.png) | ![Prediction 2](./example_images/Prediction_t168.png) |
 
 
 ## Installation
