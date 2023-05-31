@@ -19,6 +19,7 @@ This repository contains a user-friendly PyTorch implementation for StarDist 3D 
 You should have a C++ compiler installed as this code relies on C/C++ extensions that need to be compiled. You may follow these steps to install Stardist 3D:
 
 1. Download the repo
+> git clone https://github.com/itarampoulous/StarDist3D
 
 2. Create a python 3.7.9 conda environment with cuda toolkit for GPU-based computing:
 > conda create --name <environment name> python=3.7.9 cudatoolkit
@@ -26,7 +27,7 @@ You should have a C++ compiler installed as this code relies on C/C++ extensions
 3. Activate the conda environmnet:
 > conda activate <environment name>
 
-4. Navigate to the directory containing the requirements.txt file and install the dependencies:
+4. Navigate to the directory (StarDist3D) containing the requirements.txt file and install the dependencies:
 > pip install -r ./requirements.txt
 
 5. Install the package by running from the same directory:
