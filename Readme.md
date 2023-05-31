@@ -11,7 +11,6 @@ This repository contains PyTorch implementations for StarDist 3D as described in
 | Input images | StarDist3D predictions |
 | ------- | ------- |
 | ![C. elegans </em> early embryo](./example_images/Input_image_t22.png) | ![C. elegans early embryo with overlayed predictions](./example_images/Prediction_t22.png) |
-| ------- | ------- |
 | ![C. elegans early embryo](./example_images/Input_image_t168.png) | ![C. elegans early embryo with overlayed predictions](./example_images/Prediction_t168.png) |
 
 
