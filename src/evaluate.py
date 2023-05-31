@@ -17,10 +17,6 @@ from scipy.ndimage import center_of_mass
 
 import torch
 
-
-title = 'Results from Stadist3D_epochs400_v5_last'
-anisotropy = np.array([4.54, 1, 1])
-
 class centroids_config:
     def __init__(self, config):
         if config['Evaluation_on_centroids']['evaluate_on_centroids'] is None:
