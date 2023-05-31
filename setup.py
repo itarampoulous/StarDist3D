@@ -85,11 +85,12 @@ setup(
     author='Isaak Tarampoulous',
     author_email='itarampoulous@uchicago.edu',
     license='BSD-3-Clause',
-    packages=find_packages(exclude=["confs", "examples", "images"]),
+    packages=find_packages(exclude=["example_images"]),
     python_requires='>=3.6',
     entry_points={'console_scripts': [
         'trainStardist3D=src.train:main',
-        'predictStardist3D=src.predict:main']
+        'predictStardist3D=src.predict:main',
+        'evaluateStardist3D=src.evaluate:main']
         },
 
     cmdclass={'build_ext': build_ext_openmp},
