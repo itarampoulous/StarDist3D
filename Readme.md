@@ -8,11 +8,11 @@ This repository contains PyTorch implementations for StarDist 3D as described in
 
 ## Examples
 
-| Input image | StarDist3D predictions |
+| Input images | StarDist3D predictions |
 | ------- | ------- |
-| ![<em> C. elegans </em> early embryo](./example_images/Input_image_t22.png) | ![<em> C. elegans </em> early embryo with overlayed predictions](./example_images/Prediction_t22.png) |
+| ![C. elegans </em> early embryo](./example_images/Input_image_t22.png) | ![C. elegans early embryo with overlayed predictions](./example_images/Prediction_t22.png) |
 
-| ![<em> C. elegans </em> early embryo](./example_images/Input_image_t168.png) | ![<em> C. elegans </em> early embryo with overlayed predictions](./example_images/Prediction_t168.png) |
+| ![C. elegans early embryo](./example_images/Input_image_t168.png) | ![C. elegans early embryo with overlayed predictions](./example_images/Prediction_t168.png) |
 
 
 ## Installation
@@ -22,21 +22,21 @@ You should have a C++ compiler installed as this code relies on C/C++ extensions
 1. Download the repo
 
 2. Create a python 3.7.9 conda environment with cuda toolkit for GPU-based computing:
-    conda create --name <environment name> python=3.7.9 cudatoolkit
+> conda create --name <environment name> python=3.7.9 cudatoolkit
 
 3. Activate the conda environmnet:
-    conda activate <environment name>
+> conda activate <environment name>
 
 4. Navigate to the directory containing the requirements.txt file and install the dependencies:
-    pip install -r ./requirements.txt
+> pip install -r ./requirements.txt
 
 5. Install the package by running from the same directory:
-    pip install .
+> pip install .
 
 ## Run from the command line
 
 Training:
-trainStardist3D --config ./configs/train_Stadist3D_v001.yml
+> trainStardist3D --config ./configs/train_Stadist3D_v001.yml
 
 Prediction:
 
