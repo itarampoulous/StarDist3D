@@ -110,7 +110,7 @@ def main():
 
     
     test_images_paths = list(glob(config['Dataset']['image_dir'] + "/*.tif"))
-    print(f"{len(test_images_paths)} images detected in test directory")
+    print(f"{len(test_images_paths)} images detected in directory")
 
 
     export_dir = config['Dataset']['export_dir'] + config['Attributes']['name'] +  '/last_model_epoch' + str(model.opt.epoch_count) + '/'
