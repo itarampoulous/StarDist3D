@@ -1,5 +1,5 @@
 # StarDist3D
-This repository contains a user-friendly PyTorch implementation for StarDist 3D for nuclei segmentation based on:
+This repository contains a user-friendly PyTorch implementation of StarDist 3D for nuclei segmentation based on:
 
 - Martin Weigert, Uwe Schmidt, Robert Haase, Ko Sugawara, and Gene Myers.  
 [*Star-convex Polyhedra for 3D Object Detection and Segmentation in Microscopy*](http://openaccess.thecvf.com/content_WACV_2020/papers/Weigert_Star-convex_Polyhedra_for_3D_Object_Detection_and_Segmentation_in_Microscopy_WACV_2020_paper.pdf). The IEEE Winter Conference on Applications of Computer Vision (WACV), Snowmass Village, Colorado, March 2020
@@ -24,7 +24,7 @@ You should have a C++ compiler installed as this code relies on C/C++ extensions
 2. Create a python 3.7.9 conda environment with cuda toolkit for GPU-based computing:
 > conda create --name <environment name> python=3.7.9 cudatoolkit
 
-3. Activate the conda environmnet:
+3. Activate the conda environment:
 > conda activate <environment name>
 
 4. Navigate to the directory (StarDist3D) containing the requirements.txt file and install the dependencies:
@@ -41,7 +41,8 @@ Training using a training configuration file (see examples):
 Prediction using a prediction configuration file (see examples):
 > predictStardist3D --config path/to/prediction_configuration.yml
 
-Evaluation:
+Prediction using a prediction configuration file (see examples):
+> predictStardist3D --config path/to/prediction_configuration.yml
 
 
 ## Run from Jupyter Notebook

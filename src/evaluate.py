@@ -779,8 +779,7 @@ def plot_summary_metrics_on_masksGT(summary_metrics_masksGT:pd.DataFrame, output
 
     fig5.savefig(output_dir + '/summary_metrics_masksGT_IoU.tif',dpi=300)
 
-if __name__=="__main__":
-
+def main():
     import argparse
     import yaml
     parser = argparse.ArgumentParser(description='Evaluation of StarDist3D model performance')
@@ -847,3 +846,7 @@ if __name__=="__main__":
         
         plot_summary_metrics_on_masksGT(summary_metrics_masksGT=summary_metrics_masksGT,
                                         output_dir=config.masks.output_dir)
+
+if __name__=="__main__":
+    main()
+
