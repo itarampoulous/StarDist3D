@@ -35,10 +35,11 @@ You should have a C++ compiler installed as this code relies on C/C++ extensions
 
 ## Run from the command line
 
-Training:
-> trainStardist3D --config ./configs/train_Stadist3D_v001.yml
+Training using a training configuration file (see examples):
+> trainStardist3D --config path/to/training_configuration.yml
 
-Prediction:
+Prediction using a prediction configuration file (see examples):
+> predictStardist3D --config path/to/prediction_configuration.yml
 
 Evaluation:
 
