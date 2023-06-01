@@ -18,7 +18,7 @@ This repository contains a user-friendly PyTorch implementation of StarDist 3D f
 
 You should have a C++ compiler installed as this code relies on C/C++ extensions that need to be compiled. You may follow these steps to install Stardist 3D:
 
-1. Download the repo
+1. Download the repo:
 
     git clone https://github.com/itarampoulous/StarDist3D
 
