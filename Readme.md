@@ -49,7 +49,7 @@ Evaluation using an evaluation configuration file (see examples):
 
 | Evaluation on ground truth nuclei centroids | Evaluation on ground truth masks |
 | ------- | ------- |
-| ![Evaluation centroidsGT 1](./examples/evaluation_metrics/summary_metrics_on_centroidsGT.tif) | ![Evaluation masksGT 1](./examples/evaluation_metrics/summary_metrics_masksGT.tif) |
-| ![Evaluation centroidsGT 2](./examples/evaluation_metrics/summary_metrics_on_centroidsGT_Euclideandistance.tif) | ![Evaluation masksGT 2](./examples/evaluation_metrics/summary_metrics_masksGT_IoU.tif) |
+| ![Evaluation centroidsGT 1](./examples/evaluation_metrics/summary_metrics_on_centroidsGT.png) | ![Evaluation masksGT 1](./examples/evaluation_metrics/summary_metrics_masksGT.png) |
+| ![Evaluation centroidsGT 2](./examples/evaluation_metrics/summary_metrics_on_centroidsGT_Euclideandistance.png) | ![Evaluation masksGT 2](./examples/evaluation_metrics/summary_metrics_masksGT_IoU.png) |
 
 ## Run from Jupyter Notebook
