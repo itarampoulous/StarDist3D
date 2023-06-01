@@ -35,17 +35,17 @@ You should have a C++ compiler installed as this code relies on C/C++ extensions
 
 ## Run from the command line
 
-##### Training using a training configuration file (see examples):
+Training using a training configuration file (see examples):
 > trainStardist3D --config path/to/training_configuration.yml
 
-##### Prediction using a prediction configuration file (see examples):
+Prediction using a prediction configuration file (see examples):
 > predictStardist3D --config path/to/prediction_configuration.yml
 
-##### Evaluation using an evaluation configuration file (see examples):
+Evaluation using an evaluation configuration file (see examples):
 > evaluateStardist3D --config path/to/evaluation_configuration.yml
 
 
-###### Example of evaluation metrics on <em> C. elegans </em> embryo
+<center> Example of evaluation metrics on <em> C. elegans </em> embryo </center>
 
 | Evaluation on ground truth nuclei centroids | Evaluation on ground truth masks |
 | ------- | ------- |
