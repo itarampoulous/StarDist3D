@@ -1,0 +1,216 @@
+# StarDist 3D Training Configuration
+
+Attributes:
+
+  # Name to give to the model
+  name                              : 'Stadist3D_v.....'
+
+  # Random seed to use for reproducibility
+  random_seed                       : 42
+
+  # Directory path where to save the logs
+  output_dir                        : '/path/to/export/models/'
+
+
+#####################
+
+
+Networks:
+
+  init_type                         : 'normal'
+  init_gain                         : 0.02
+
+  backbone                          : 'resnet'
+
+  # Subsampling factors (must be powers of 2) for each of the axes.
+  # Model will predict on a subsampled grid for increased efficiency and larger field of view.
+  grid                              : 'auto'
+
+  # Anisotropy on your imaging dataset
+  anisotropy                        : [4,1,1]
+
+  # Number of channel of images
+  n_channel_in                      : 1
+
+  # Kernel size to use in neural network (use [3,3,3] for 3D)
+  kernel_size                       : [3,3,3]
+
+  # Number of ResNet blocks to use
+  resnet_n_blocks                   : 4
+
+  # None if grid = 'auto'. Otherwise, it has to match the grid.
+  resnet_n_downs                    : 
+
+  # Number of filter in the convolution layer before the final prediction layer.
+  n_filter_of_conv_after_resnet     : 128
+
+  # Number of filter to use in the first convolution layer
+  resnet_n_filter_base              : 32
+
+  # Number of convolution layers to use in each ResNet block.
+  resnet_n_conv_per_block           : 3
+
+
+  use_batch_norm                    : False
+
+
+#####################
+
+
+Dataset:
+
+  # Path to datasets directory containing a daughter directory named 'train' with two daughter directories named 'images' and 'masks'
+  # Note that if  evaluate is set to True, it will validate during training using the data provided under datasets/val/ 
+  data_dir                          : '/path/to/datasets/' 
+  
+  # Fraction (0...1) of data from the `train` folder
+  # to use as validation set when the `val` folder doesn't exist
+  val_size                          : 0.15
+
+  # Size of batches
+  batch_size                        : 2
+
+  # Number of subprocesses to use for data training.
+  num_workers                       : 0
+
+  Parameters:
+    
+    # Number of rays to use in in the star-convex representation of nuclei shape 
+    n_rays                          : 96
+    
+    # Fraction (0..1) of patches that will only be sampled from regions that contain foreground pixels.
+    foreground_prob                 :  0.9
+    
+    # Size of image to crop from original images
+    patch_size                      : [10, 32, 32]
+    
+    # Set True to store indices of valid patches in RAM
+    cache_sample_ind                : True
+    
+    # Set True to store training data in RAM
+    cache_data                      : True
+
+  preprocessing:
+    # Type of augmentation to do on training data.
+    # available augmentations: none|flip|randintensity|randscale|resize
+    # You can use multiple of them, e.g. flip_randintensity
+    preprocess                      : "flip_randintensity"
+
+    # Type of augmentation to do on validation data.
+    preprocess_val                  : "none"
+
+    # Range from which to sample weight to multiply image intensities.
+    # Associated to `randintensity` augmentation.          
+    intensity_factor_range          : [0.6, 2.]
+
+    # Range from which to sample bias to add to image intentsities.
+    # Associated to `randintensity` augmentation. 
+    intensity_bias_range            : [-0.2, 0.2]
+
+    # Range from which to sample scale to apply the image.
+    # Associated to `randscale` augmentation.
+    scale_limit                     : #[0.5, 4]
+    
+    # Size to which to resize each image
+    resize_to                       : #[5, 286, 286]
+            
+
+
+#####################
+
+
+Trainer:
+
+  # Whether to initialize model in traning mode (set optimizers, schedulers ...)
+  isTrain                           : True
+
+  # Whether to use GPU
+  use_gpu                           : True
+  #gpu_ids                           : [0]
+
+  # whether to use Automatic Mixed Precision
+  use_amp                           : True
+
+  # Whether to perform evaluation during traning.
+  evaluate                          : False #True
+
+  # If not None, it will load state corresponding to epoch `load_epoch` and continue training from there
+  load_epoch                        : ''
+
+  # Number of training epochs
+  n_epochs                          : 400
+
+  # Number of weights updates per epoch  
+  n_steps_per_epoch                 : 100
+
+  # Epoch saving frequency
+  save_epoch_freq                   : 50
+
+  # Epoch after which to start to save the best model
+  start_saving_best_after_epoch     : 5
+
+  Parameters:
+    lambda_prob                     : 1.
+    lambda_dist                     : 0.2
+    lambda_reg                      : 0.0001
+    lambda_prob_class               : 1.
+
+
+#####################
+
+
+Optimizer:
+
+  # Learning rate
+  lr                                : 0.0002
+
+  # Parameters for Adam optimizer
+  beta1                             : 0.9
+  beta2                             : 0.999
+
+  # Learning rate scheduler policy
+  # Possible values:
+  #       "none" -> keep the same learning rate for all epochs
+  #       "plateau" -> Pytorch ReduceLROnPlateau scheduler
+  #       "linear_decay" -> linearly decay learning rate from `lr` to 0
+  #       "linear" -> linearly increase  learning rate from 0 to `lr` during the first `lr_linear_n_epochs` and use `lr` for the remaining epochs
+  #       "step" -> reduce learning rate by 10 every `lr_step_n_epochs`
+  #       "cosine" -> Pytorch CosineAnnealingLR  
+
+  lr_policy                         : "plateau"
+
+
+  # Parameters when lr_policy = "plateau"
+  lr_plateau_factor                 : 0.5
+  lr_plateau_threshold              : 0.0000001
+  lr_plateau_patience               : 40
+  min_lr                            : 0.00000001
+
+  # Parameters when lr_policy = "linear"
+  lr_linear_n_epochs                :
+
+  # Parameters when lr_policy = "linear_decay"  
+  lr_decay_iters                    : 
+
+  # T_max parameter of Pytorch CosineAnnealingLR when `lr_policy` = "cosine
+  T_max                             :
+
+
+
+#####################
+
+
+Threshold_optimizer:
+
+  # Dataset to be used for threshold optimization. Either 'train' or 'val'.
+  dataset: 'train'
+
+  # Epoch to be used to optimize thresholds: 'best' or 'last'
+  # Use 'best' only if the trainer evaluate value is set to True
+  epoch: 'last'
+  
+  # Grid search for Non-maximum suppression thresholds. Leave empty to use default settings [0.3, 0.4, 0.5]
+  NMS_thresh: #[0.3,0.4,0.5,0.6,0.7]
+  
+  # Intersection over union (IoU) thresholds. Leave empty to use default settings [0.3, 0.5, 0.7]
+  IoU_thresh: #[0.3,0.4,0.5,0.6,0.7]

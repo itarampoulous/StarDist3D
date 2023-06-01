@@ -1,0 +1,35 @@
+# StarDist 3D Inference Configuration
+
+Attributes:
+
+  # Directory path to the checkpoints directory
+  # It must contain a folder named after the model name with the checkpoints in .pth format.
+  checkpoints_dir                        : '/path/to/models/checkpoints/'
+
+  # Name of the model
+  # This should match the directory the contains the model's checkpoints to be used
+  name                              : 'Stadist3D_v....'
+
+  # Note that the epoch for which NMS optimization was ran will be loaded automatically.
+
+
+#####################
+
+
+Dataset:
+
+  image_dir                          : '/path/to/input/images/'
+  export_dir                    : '/path/to/export/predictions/'
+
+
+#####################
+
+
+Inference:
+
+  # Whether to use GPU
+  use_gpu                           : True
+  #gpu_ids                           : [0]
+
+  # whether to use Automatic Mixed Precision
+  use_amp                           : True
