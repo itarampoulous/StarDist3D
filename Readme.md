@@ -10,8 +10,8 @@ This repository contains a user-friendly PyTorch implementation of StarDist 3D f
 
 | Input images | StarDist3D predictions |
 | ------- | ------- |
-| ![Input image 1](./example_images/Input_image_t22.png) | ![Prediction 1](./example_images/Prediction_t22.png) |
-| ![Input image 2](./example_images/Input_image_t168.png) | ![Prediction 2](./example_images/Prediction_t168.png) |
+| ![Input image 1](./examples/predictions/Input_image_t22.png) | ![Prediction 1](./examples/predictions/Prediction_t22.png) |
+| ![Input image 2](./examples/predictions/Input_image_t168.png) | ![Prediction 2](./examples/predictions/Prediction_t168.png) |
 
 
 ## Installation
@@ -41,8 +41,15 @@ Training using a training configuration file (see examples):
 Prediction using a prediction configuration file (see examples):
 > predictStardist3D --config path/to/prediction_configuration.yml
 
-Prediction using a prediction configuration file (see examples):
-> predictStardist3D --config path/to/prediction_configuration.yml
+Evaluation using an evaluation configuration file (see examples):
+> evaluateStardist3D --config path/to/evaluation_configuration.yml
 
+
+### Example of evaluation metrics on <em> C. elegans </em> embryo
+
+| Evaluation on ground truth nuclei centroids | Evaluation on ground truth masks |
+| ------- | ------- |
+| ![Evaluation centroidsGT 1](./examples/evaluation_metrics/summary_metrics_on_centroidsGT.tif) | ![Evaluation masksGT 1](./examples/evaluation_metrics/summary_metrics_masksGT.tif) |
+| ![Evaluation centroidsGT 2](./examples/evaluation_metrics/summary_metrics_on_centroidsGT_Euclideandistance.tif) | ![Evaluation masksGT 2](./examples/evaluation_metrics/summary_metrics_masksGT_IoU.tif) |
 
 ## Run from Jupyter Notebook
