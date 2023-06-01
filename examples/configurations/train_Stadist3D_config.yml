@@ -9,7 +9,7 @@ Attributes:
   random_seed                       : 42
 
   # Directory path where to save the logs
-  output_dir                        : '/path/to/export/models/'
+  output_dir                        : '/directory/to/export/models/'
 
 
 #####################
@@ -92,7 +92,7 @@ Dataset:
 
   preprocessing:
     # Type of augmentation to do on training data.
-    # available augmentations: none|flip|randintensity|randscale|resize
+    # available augmentations: none|flip|randintensity
     # You can use multiple of them, e.g. flip_randintensity
     preprocess                      : "flip_randintensity"
 
@@ -106,14 +106,6 @@ Dataset:
     # Range from which to sample bias to add to image intentsities.
     # Associated to `randintensity` augmentation. 
     intensity_bias_range            : [-0.2, 0.2]
-
-    # Range from which to sample scale to apply the image.
-    # Associated to `randscale` augmentation.
-    scale_limit                     : #[0.5, 4]
-    
-    # Size to which to resize each image
-    resize_to                       : #[5, 286, 286]
-            
 
 
 #####################
