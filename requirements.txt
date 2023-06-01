@@ -19,3 +19,4 @@ torch==1.13.1
 torchvision==0.14.1
 tqdm==4.62.3
 ipython==7.34.0
+ipykernel==6.16.2
