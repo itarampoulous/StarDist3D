@@ -20,23 +20,23 @@ You should have a C++ compiler installed as this code relies on C/C++ extensions
 
 1. Download the repo:
 
-     git clone https://github.com/itarampoulous/StarDist3D
+        git clone https://github.com/itarampoulous/StarDist3D
 
 2. Create a python 3.7.9 conda environment with cuda toolkit for GPU-based computing:
 
-     conda create --name "environment_name" python=3.7.9 cudatoolkit
+        conda create --name "environment_name" python=3.7.9 cudatoolkit
 
 3. Activate the conda environment:
 
-     conda activate "environment_name"
+        conda activate "environment_name"
 
 4. Navigate to the directory (StarDist3D) containing the requirements.txt file and install the dependencies:
 
-     pip install -r ./requirements.txt
+        pip install -r ./requirements.txt
 
 5. Install the package by running from the same directory containing the setup.py script:
 
-     pip install .
+        pip install .
 
 ## Run from the command line
 
