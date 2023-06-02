@@ -48,18 +48,13 @@ Training using a training configuration file (see [example](./examples/configura
 Note that the dataset has to have the following structure:
 
 ├── dataset
-
-│   ├── train
-
-│   │   ├── images
-
-│   │   ├── masks
-
-│   ├── val (optional, if you want to evaluate during training)
-
-│   │   ├── images
-
-│   │   ├── masks
+        ├── train
+                ├── images
+                ├── masks
+                
+        ├── val (optional, if you want to evaluate during training)
+                ├── images
+                ├── masks
 
 ### Inference
 Prediction using a prediction configuration file (see [example](./examples/configurations/predict_Stardist3D_config.yml)):
