@@ -48,11 +48,17 @@ Training using a training configuration file (see [example](./examples/configura
 Note that the dataset has to have the following structure:
 
 ├── dataset
+
 │   ├── train
+
 │   │   ├── images
+
 │   │   ├── masks
+
 │   ├── val (optional, if you want to evaluate during training)
+
 │   │   ├── images
+
 │   │   ├── masks
 
 ### Inference
