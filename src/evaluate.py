@@ -362,6 +362,8 @@ def plot_summary_metrics_on_centroidsGT(summary_metrics_centroidsGT:pd.DataFrame
     ax.legend(fontsize = fs/1.5)
     ax.tick_params(axis='both', labelsize=fs/1.5)
     fig2.savefig(output_dir + '/summary_metrics_on_centroidsGT_Euclideandistance.tif',dpi=300)
+    return fig1, fig2
+
 
 def iou(mask1:np.ndarray, mask2:np.ndarray):
     """This function takes two binary masks and returns their intersection over union.
@@ -774,6 +776,7 @@ def plot_summary_metrics_on_masksGT(summary_metrics_masksGT:pd.DataFrame, output
     ax.axhline(0.5, linestyle = 'dashed', color="lightgrey", lw=1.5, alpha = 0.5, label='Usual cut-off')
 
     fig5.savefig(output_dir + '/summary_metrics_masksGT_IoU.tif',dpi=300)
+    return fig1, fig2, fig3, fig4, fig5
 
 def main():
     import argparse

@@ -1,5 +1,4 @@
 # StarDist 3D Model Evaluation Configuration
-txt
 # Evaluate using nuclei centroid coordinates as the ground truth
 Evaluation_on_centroids:
 

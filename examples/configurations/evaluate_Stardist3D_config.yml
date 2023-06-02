@@ -44,7 +44,7 @@ Evaluation_on_masks:
 
   Parameters:
     # Path to the directory containing the masks predicted by the model
-    predictions_dir                        : '/home/itarampoulous/3D_segmentation/StarDist3D_FINAL/datasets/train/predictions/Stadist3D_v001/last_model_epoch400/'
+    predictions_dir                        : '/path/to/predictions_directory/'
 
     # The timepoints for the predicted masks will be extracted from the filename using
     # the following pattern. Make sure that the timepoints match the timepoints in the ground truth.
