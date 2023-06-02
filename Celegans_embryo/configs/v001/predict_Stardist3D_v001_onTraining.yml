@@ -1,0 +1,35 @@
+# StarDist 3D Inference Configuration
+
+Attributes:
+
+  # Directory path to the checkpoints directory
+  # It must contain a folder named after the model name with the checkpoints in .pth format.
+  checkpoints_dir                        : '/home/itarampoulous/3D_segmentation/github_repo/StarDist3D/Celegans_embryo/models/checkpoints/'
+
+  # Name of the model
+  # This should match the directory the contains the model's checkpoints to be used
+  name                              : 'Stadist3D_v001'
+
+  # Note that the epoch for which NMS optimization was ran will be loaded automatically.
+
+
+#####################
+
+
+Dataset:
+
+  image_dir                          : '/home/itarampoulous/3D_segmentation/github_repo/StarDist3D/Celegans_embryo/datasets/train/images/'
+  export_dir                    : '/home/itarampoulous/3D_segmentation/github_repo/StarDist3D/Celegans_embryo/datasets/train/predictions/'
+
+
+#####################
+
+
+Inference:
+
+  # Whether to use GPU
+  use_gpu                           : True
+  #gpu_ids                           : [0]
+
+  # whether to use Automatic Mixed Precision
+  use_amp                           : True

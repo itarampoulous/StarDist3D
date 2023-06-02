@@ -1,0 +1,66 @@
+# StarDist 3D Model Evaluation Configuration
+txt
+# Evaluate using nuclei centroid coordinates as the ground truth
+Evaluation_on_centroids:
+
+  # Set evaluate_on_centroids to True if you want to evaluate on centroids
+  evaluate_on_centroids: True
+
+  # Directory where the output metrics will be saved.
+  # By default, the metrics will be saved in predictions_dir.
+  output_dir                               : #uses predictions_dir/performance_metrics/ by default
+
+  Parameters:
+    # Path to the directory containing the masks predicted by the model
+    predictions_dir                        : '/home/itarampoulous/3D_segmentation/github_repo/StarDist3D/Celegans_embryo/datasets/test/predictions/Stadist3D_v002/last_model_epoch400/'
+
+    # The timepoints for the predicted masks will be extracted from the filename using
+    # the following pattern. Make sure that the timepoints match the timepoints in the ground truth.
+    # For example, if your files have the following filename format: embryo_t42.tif, the digits (42)
+    # following the pattern (in this case '_t'), will be extracted.
+    pattern                                : #uses '_t' by default if pattern is not specified
+
+
+    # Ground truth path: path to a txt file containing the centroids ground truth
+    # The txt should have the following columns:
+        # time: timepoint
+        # cell_name: name of the cell (optional, if available)
+        # X: X coordinate
+        # Y: Y coordinate
+        # Z: Z coordinate
+    centroids_GT_path                       : '/home/itarampoulous/3D_segmentation/github_repo/StarDist3D/Celegans_embryo/datasets/ground_truth_centroids/Cell-lineage-and-position-WT-compressed_canonical_orientation/WT-EMB01.txt'
+
+
+    # Anisotropy of images in predictions_dir
+    anisotropy                             : [4.54, 1, 1]
+
+# Evaluate using nuclei masks as the ground truth
+Evaluation_on_masks:
+
+  # Set evaluate_on_masks to True if you want to evaluate on centroids
+  evaluate_on_masks: True
+
+  output_dir                              : #uses predictions_dir/performance_metrics/ by default
+
+  Parameters:
+    # Path to the directory containing the masks predicted by the model
+    predictions_dir                        : '/home/itarampoulous/3D_segmentation/github_repo/StarDist3D/Celegans_embryo/datasets/train/predictions/Stadist3D_v002/last_model_epoch400/'
+
+    # The timepoints for the predicted masks will be extracted from the filename using
+    # the following pattern. Make sure that the timepoints match the timepoints in the ground truth.
+    # For example, if your files have the following filename format: embryo_t42.tif, the digits (42)
+    # following the pattern (in this case '_t'), will be extracted.
+    pattern_predictions_dir                : #uses '_t' by default if pattern is not specified
+
+
+    # Path to the directory contraining the ground truth masks
+    masks_GT_dir                          : '/home/itarampoulous/3D_segmentation/github_repo/StarDist3D/Celegans_embryo/datasets/train/masks/'
+
+    # The timepoints for the ground truth masks will be extracted from the filename using
+    # the following pattern. Make sure that the timepoints match the timepoints in the ground truth.
+    # For example, if your files have the following filename format: embryo_t42.tif, the digits (42)
+    # following the pattern (in this case '_t'), will be extracted.
+    pattern_masks_GT_dir                  : #uses '_t' by default if pattern is not specified
+    
+
+    anisotropy                            : [4.54, 1, 1]
